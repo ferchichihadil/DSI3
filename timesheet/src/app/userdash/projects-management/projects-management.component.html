@@ -1,1 +1,12 @@
-<p>projects-management works!</p>
+<div class="container">
+    <h2>Gestion des Projets</h2>
+    <ul>
+      <li *ngFor="let project of projects">
+        <span>{{ project.name }}</span>
+        <button (click)="toggleProjectStatus(project)">
+          {{ project.isActive ? 'Désactiver' : 'Activer' }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  

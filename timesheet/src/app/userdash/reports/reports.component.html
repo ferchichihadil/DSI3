@@ -1,1 +1,24 @@
-<p>reports works!</p>
+<div class="container">
+    <h2>Rapports de Temps</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Projet</th>
+          <th>Temps Total Passé (heures)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.name }}</td>
+          <td>{{ project.totalTimeSpent }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>{{ getTotalTimeSpent() }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  

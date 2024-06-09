@@ -1,1 +1,50 @@
-<p>timesheet-entry works!</p>
+<div class="container">
+    <h2>Entrée De Timesheet </h2>
+    <form [formGroup]="timesheetForm" (ngSubmit)="addOrUpdateEntry()">
+      <div>
+        <label for="startDate">Date Début:</label>
+        <input id="startDate" type="date" formControlName="startDate">
+      </div>
+      <div>
+        <label for="endDate">Date Fin:</label>
+        <input id="endDate" type="date" formControlName="endDate">
+      </div>
+      <div>
+        <label for="hoursWorked">Heures Travaillées:</label>
+        <input id="hoursWorked" type="number" formControlName="hoursWorked">
+      </div>
+      <div>
+        <label for="note">Note:</label>
+        <input id="note" type="text" formControlName="note">
+      </div>
+      <button type="submit">{{ editIndex !== null ? 'Modifier' : 'Créer' }}</button>
+    </form>
+  
+    <div *ngIf="entries.length">
+        <h3>Entrées</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date Début</th>
+              <th>Date Fin</th>
+              <th>Heures Travaillées</th>
+              <th>Note</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entry of entries; let i = index">
+              <td>{{ entry.startDate }}</td>
+              <td>{{ entry.endDate }}</td>
+              <td>{{ entry.hoursWorked }}</td>
+              <td>{{ entry.note }}</td>
+              <td>
+                <button (click)="editEntry(i)">Modifier</button>
+                <button (click)="deleteEntry(i)">Supprimer</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  

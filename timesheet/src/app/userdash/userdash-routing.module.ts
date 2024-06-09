@@ -12,9 +12,9 @@ const routes: Routes = [{ path: '', component: UserdashComponent ,
     { path: '', redirectTo: '/userdash/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'Projects Managment', component:ProjectsManagementComponent},
-    { path:'Reports',component:ReportsComponent},
-    { path:'TimeSheet',component:TimesheetEntryComponent},
+    { path: 'projects-managment', component:ProjectsManagementComponent},
+    { path:'reports',component:ReportsComponent},
+    { path:'timesheet-entry',component:TimesheetEntryComponent},
   ]
  }];
 
