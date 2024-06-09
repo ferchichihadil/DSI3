@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between; /* Space out the logo and user section */
+  align-items: center; /* Center items vertically */
+  padding: 20px 50px; /* Adjust padding as needed */
+  background-color: rgb(1, 38 , 69); /* Background color for the header */
+  border-bottom: 1px solid #e0e0e0; /* Optional: border at the bottom */
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  margin-right: 10px; /* Space between the user name and image */
+  font-size: 1em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.user-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-image img {
+  border-radius: 50%; /* Makes the image circular */
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Ensures the image is square */
+  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  border: 2px solid #e0e0e0; /* Optional: Adds a border around the image */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Optional: Adds a transition effect */
+}
+
+.user-image img:hover {
+  transform: scale(1.1); /* Optional: Scales the image up slightly on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Increases the shadow on hover */
+}

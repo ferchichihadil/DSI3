@@ -1,0 +1,45 @@
+<div>
+  
+
+  <h3>Ajouter un nouveau projet</h3>
+  <form (ngSubmit)="addProject()">
+    <div>
+      <label for="name">Nom:</label>
+      <input type="text" id="name" [(ngModel)]="newProjectName" name="name" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" id="description" [(ngModel)]="newProjectDescription" name="description" required>
+    </div>
+    <button type="submit">Ajouter</button>
+  </form>
+  <h2>Liste des projets</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>{{ project.id }}</td>
+        <td *ngIf="!editingProject || editingProject.id !== project.id">{{ project.name }}</td>
+        <td *ngIf="!editingProject || editingProject.id !== project.id">{{ project.description }}</td>
+        <td *ngIf="editingProject && editingProject.id === project.id">
+          <input type="text" [(ngModel)]="editingProject.name" name="editName">
+        </td>
+        <td *ngIf="editingProject && editingProject.id === project.id">
+          <input type="text" [(ngModel)]="editingProject.description" name="editDescription">
+        </td>
+        <td>
+          <button *ngIf="!editingProject || editingProject.id !== project.id" (click)="editProject(project)">Modifier</button>
+          <button *ngIf="!editingProject || editingProject.id !== project.id" (click)="deleteProject(project.id)">Supprimer</button>
+          <button *ngIf="editingProject && editingProject.id === project.id" (click)="updateProject()">Enregistrer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

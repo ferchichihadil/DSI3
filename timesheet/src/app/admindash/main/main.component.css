@@ -1,0 +1,36 @@
+.card-container {
+    display: flex;
+    justify-content: space-around; /* Adjusts the spacing between the cards */
+    gap: 20px; /* Adds space between the cards */
+    padding: 20px;
+}
+
+.card {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px; /* Flex properties to make cards responsive */
+    max-width: 300px; /* Ensures cards don't get too wide */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 1.2em;
+    margin: 0;
+}
